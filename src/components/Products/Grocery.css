@@ -1,0 +1,79 @@
+#grocery{
+  width: 80%;
+  margin: auto;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 30px;
+}
+#grid-div{
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  height: 350px;
+  border-radius: 10px;
+}
+#grid-top{
+  height: 80%;
+}
+#grid-bottom{
+  height: 20%;
+}
+#grid-img{
+  width: 100px;
+  margin-left: 80px;
+  margin-top: 30px;
+}
+#grid-img-mob{
+  width: 50px;
+  margin-left: 120px;
+  margin-top: 30px;
+}
+#grid-img:hover{
+  width: 110px;
+  transition: 1s linear;
+}
+#grid-title{
+  text-align: center;
+  padding-top: 20px;
+  font-family: 'Josefin Sans', sans-serif;
+}
+#grid-price{
+  text-align: center;
+  padding-top: 20px;
+  font-family: 'Josefin Sans', sans-serif;
+}
+#grid-bottom{
+  display: flex;
+}
+#grid-but-view{
+  width: 120px;
+  height: 40px;
+  margin-top: 15px;
+  color: #fff;
+  background-color: #2d3e52;
+  border-radius: 5px;
+  border: 1px solid #2d3e52;
+  margin-left: 15px;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+#grid-but-view:hover{
+  background-color: white;
+  color: #2d3e52;
+}
+#grid-but-cart{
+  width: 120px;
+  height: 40px;
+  margin-top: 15px;
+  color: #fff;
+  background-color: #2d3e52;
+  border-radius: 5px;
+  border: 1px solid #2d3e52;
+  margin-left: 10px;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+#grid-but-cart:hover{
+  background-color: white;
+  color: #2d3e52;
+}

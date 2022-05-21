@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Rancho&display=swap');
+
+#gro>h1{
+    font-family: 'Josefin Sans', sans-serif;
+    padding-top: 50px;
+    padding-left: 160px;
+}
+
+
+#home > div:nth-child(1){
+    width: 80%;
+    height: 150px;
+    margin: auto;
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-gap: 20px;
+}
+#home > div:nth-child(1)>div{
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    cursor: pointer;
+    border-radius: 10px;
+}
+#home > div:nth-child(1)>div>img{
+    width: 100px;
+    margin-top: 10px;
+    margin-left: 15px;
+}
+#home > div:nth-child(1)>div>img:hover{
+    animation: 0.2s card linear;
+}
+@keyframes card{
+    0%{
+        transform:rotateZ(30deg);
+    }
+    10%{
+        transform: rotateZ(60deg);
+    }
+    20%{
+        transform: rotateZ(90deg)
+    }
+    30%{
+        transform: rotateZ(120deg)
+    }
+    40%{
+        transform: rotateZ(150deg);
+    }
+    50%{
+        transform: rotateZ(180deg);
+    }
+    60%{
+        transform: rotateZ(210deg);
+    }
+    70%{
+        transform: rotateZ(240deg);
+    }
+    80%{
+        transform: rotateZ(270deg);
+    }
+    90%{
+        transform: rotateZ(300deg);
+    }
+    100%{
+        transform: rotateZ(360deg);
+    }
+}
+#home > div:nth-child(1)>div>p{
+    font-family: 'Fira Sans Extra Condensed', sans-serif;
+    text-align: center;
+}
+#home > div:nth-child(1)>div>p:hover{
+    color: gray;
+}
+
+.title{
+    color: #2d3e52;
+    text-align: center;
+}
+.title:hover{
+    color: gray;
+}
+
+#card1{
+    width: 100%;
+    display: flex;
+    gap: 10px;
+    margin-top: 200px;
+    margin-bottom: 50px;
+}
+#card1>div{
+    width: 33%;
+}
+#card1>div>img{
+    width: 500px;
+    border-radius: 10px;
+}
+
+#travelvideo>video{
+    width: 100%;
+    margin-top: 50px;
+}
+#card2{
+    width: 40%;
+    margin-left: 500px;
+    height: 400px;
+    background-color: white;
+    position: absolute;
+    margin-top: -300px;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+#card2-img-div{
+    width: 70%;
+    margin: auto;
+    margin-top: 20px;
+}
+#card2-img-div>img{
+    margin-left: 50px;
+}
+#card2>h1{
+    font-family: 'Rancho', cursive;
+    text-align: center;
+    padding-top: 40px;
+    font-size: 90px;
+    color: #2d3e52;
+}
+#card2-button{
+  width: 100%;
+  height: 130px;
+  color: #fff;
+  background-color: #2d3e52;
+  border-radius: 5px;
+  border: 1px solid #2d3e52;
+  cursor: pointer;
+  font-family: 'Rancho', cursive;
+  font-size: x-large;
+}
+#card2-button:hover{
+    background-color: white;
+    color: #2d3e52;
+  }

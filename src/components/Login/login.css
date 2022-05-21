@@ -1,0 +1,125 @@
+#signup{
+    width: 100%;
+    background-color: #2d3e52;
+    height: 730px;
+    color: #2d3e52;
+    font-family: 'Josefin Sans', sans-serif;
+}
+#signup-div{
+    width: 70%;
+    margin: auto;
+    display: flex;
+    
+}
+#signup-left{
+    width: 50%;
+    height: 100%;
+    margin-top: 30px;
+    margin-bottom: 50px;
+    background-color: white;
+}
+#signup-left>img{
+    width: 100%;
+}
+#signup-right{
+    width: 50%;
+    height: 668px;
+    margin-top: 30px;
+    margin-bottom: 50px;
+    background-color: white;
+    text-align: center;
+}
+#signup-right>h1{
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+#signup-right>input{
+    width: 80%;
+    height: 40px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 1px solid #2d3e52;
+    padding-left: 20px;
+    color: #2d3e52;
+}
+#signup-but{
+    width: 80%;
+    height: 45px;
+    margin-top: 20px;
+    border:1px solid #2d3e52;
+    background-color: #2d3e52;
+    color: white;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: medium;
+    font-weight: 600;
+}
+#signup-but:hover{
+    background-color: white;
+    color: #2d3e52;
+}
+.create{
+    color: #2d3e52;
+    padding-top: 20px;
+}
+
+#signin{
+    width: 100%;
+    background-color: #2d3e52;
+    height: 730px;
+    color: #2d3e52;
+    font-family: 'Josefin Sans', sans-serif;
+}
+#signin-div{
+    width: 70%;
+    margin: auto;
+    display: flex;
+    
+}
+#signin-left{
+    width: 50%;
+    height: 100%;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    background-color: white;
+}
+#signin-left>img{
+    width: 100%;
+}
+#signin-right{
+    width: 50%;
+    height: 668px;
+    margin-top: 30px;
+    margin-bottom: 50px;
+    background-color: white;
+    text-align: center;
+}
+#signin-right>h1{
+    padding-top: 150px;
+    padding-bottom: 20px;
+}
+#signin-right>input{
+    width: 80%;
+    height: 40px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 1px solid #2d3e52;
+    padding-left: 20px;
+    color: #2d3e52;
+}
+#signin-but{
+    width: 80%;
+    height: 45px;
+    margin-top: 20px;
+    border:1px solid #2d3e52;
+    background-color: #2d3e52;
+    color: white;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: medium;
+    font-weight: 600;
+}
+#signin-but:hover{
+    background-color: white;
+    color: #2d3e52;
+}

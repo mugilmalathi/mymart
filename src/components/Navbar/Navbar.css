@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
+body{
+  font-family: sans-serif;
+}
+#navbar{
+  width: 100%;
+  height: 70px;
+  background-color: #2d3e52;
+  display: flex;
+}
+#navbar-logo{
+  width: 150px;
+  height: 60px;
+  margin-top: 5px;
+  margin-left: 150px;
+}
+.nav-h2{
+  padding-left: 100px;
+  padding-top: 20px;
+  font-family: 'Josefin Sans', sans-serif;
+}
+a{
+  text-decoration: none;
+  color: white;
+  font-family: 'Josefin Sans', sans-serif;
+}
+#nav-cart{
+  display: flex;
+}
+#account{
+  margin-left: 800px;
+  width: 120px;
+  height: 40px;
+  margin-top: 15px;
+  color: #2d3e52;
+  background-color: white;
+  border-radius: 5px;
+  border: 1px solid white;
+  cursor: pointer;
+}
+#account:hover{
+  background-color: #2d3e52;
+  color:white;
+  border: 1px solid white;
+}
+#nav-img{
+  margin-left: 50px;
+  width: 50px;
+  margin-top: 10px;
+}
+#nav-cart>div{
+  width: 30px;
+  height: 30px;
+  background-color: white;
+  color: #2d3e52;
+  border-radius: 50%;
+  text-align: center;
+  font-size: medium;
+  font-weight: bold;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  justify-content: center;
+  margin-top: 10px;
+  margin-left: -49px;
+}

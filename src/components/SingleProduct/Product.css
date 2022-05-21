@@ -1,0 +1,91 @@
+#product{
+    width: 80%;
+    margin: auto;
+    height: 500px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    border-radius: 50px;
+    font-family: sans-serif;
+}
+#product-main{
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+#product-main>div:nth-child(1){
+    width: 40%;
+    height: 80%;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: 30px;
+    margin-top: 80px;
+    margin-left: 50px;
+}
+#product-main>div:nth-child(2){
+    width: 40%;
+    height: 80%;
+    margin-left: 100px;
+    color: white;
+    margin-top: 80px;
+    border: 1px solid black;
+    border-radius: 30px;
+    background-color: #202124;
+}
+#product-main>div:nth-child(1)>img{
+    width: 150px;
+    height: 80%;
+    margin-left: 150px;
+    margin-top: 50px;
+    border-radius: 30px;
+    
+}
+#product-main>div:nth-child(2)>h1{
+    padding-top: 50px;
+    padding-left: 50px;
+    padding-right: 20px;
+}
+#product-main>div:nth-child(2)>h4{
+    padding-top: 50px;
+    padding-left: 50px;
+    padding-right: 20px;
+}
+#product-main>div:nth-child(2)>p{
+    padding-top: 20px;
+    padding-left: 50px;
+    padding-right: 20px;
+    color: gray;
+}
+#cart-pincode{
+    margin-top: 50px;
+}
+#cart-pincode>label{
+    padding-left: 50px;
+    padding-right: 20px;
+    color: gray;
+}
+#cart-pincode>input{
+    border-left: 0ch;
+    border-top: 0ch;
+    border-right: 0ch;
+    border-bottom: 2px solid white;
+    background-color: #202124;
+    margin-left: 20px;
+    height: 35px;
+    width: 250px;
+    color: white;
+}
+#product-main>div:nth-child(2)>button{
+    margin-top: 60px;
+    margin-left: 50px;
+    width: 400px;
+    height: 45px;
+    border: 1px solid #202124;
+    border-radius: 5px;
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: medium;
+    cursor: pointer;
+}
+#product-main>div:nth-child(2)>button:hover{
+    background-color: rgb(149, 141, 141);
+    color: black;
+}
