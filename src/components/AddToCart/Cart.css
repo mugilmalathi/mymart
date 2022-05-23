@@ -1,3 +1,9 @@
+#qty{
+    display: flex;
+    gap: 5px;
+    margin-top: 60px;
+    margin-left: 20px;
+}
 #addtocart{
     width: 80%;
     margin: auto;
@@ -25,25 +31,44 @@
     margin-left: 50px;
     margin-right: 10px;
 }
-#addtocart__left>div>div:nth-child(2){
-    text-align: center;
-    width: 60%;
+#qty{
+    width: 120px;
+    height: 40px;
+    margin-top: 75px;
 }
-#addtocart__left>div>div:nth-child(2)>p{
-    padding-top: 60px;
-    color: #2d3e52;
+#qty>div>button{
+    width: 30px;
+    height: 30px;
+    border: 1px solid #2d3e52;
+    background-color: #2d3e52;
+    color: white;
+    border-radius: 5px;
+    font-size: large;
+    font-weight: bold;
+    cursor: pointer;
+}
+#qty>div>h4{
+    padding-top: 5px;
 }
 #addtocart__left>div>div:nth-child(3){
-    width: 20%;
+    text-align: center;
+    width: 50%;
 }
-#addtocart__left>div>div:nth-child(3)>h1{
-    padding-top: 80px;
+#addtocart__left>div>div:nth-child(3)>p{
+    padding-top: 85px;
     color: #2d3e52;
 }
 #addtocart__left>div>div:nth-child(4){
     width: 20%;
 }
-#addtocart__left>div>div:nth-child(4)>button{
+#addtocart__left>div>div:nth-child(4)>h1{
+    padding-top: 80px;
+    color: #2d3e52;
+}
+#addtocart__left>div>div:nth-child(5){
+    width: 20%;
+}
+#addtocart__left>div>div:nth-child(5)>button{
     margin-top: 70px;
     width: 50px;
     height: 50px;

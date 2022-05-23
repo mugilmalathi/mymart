@@ -1,23 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Grocery.css"
 import { Link } from "react-router-dom";
-// Redux
-import { connect, useDispatch, useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import {
   addCount,
   addToCart, SelectedGrocery, SetTotal,
-} from "../../redux/Shopping/shopping-actions";
-import { useParams } from "react-router";
+} from "../../redux/Action/actions";
 import Navbar from "../Navbar/Navbar";
 import Footer from "../Footer/Footer";
-import {sortProducts} from "../../redux/Shopping/shopping-actions"
 
   const Grocery = () => {
 
     const grocery = useSelector((state)=> state.groceries.grocery);
     const dispatch = useDispatch();
-    const count = useSelector((state)=> state.cartcount.cartcount);
-    // const {groceryId} = useParams();
+    // const count = useSelector((state)=> state.cartcount.cartcount);
 
     const add =(e)=>{
       dispatch(addToCart(e))
@@ -29,15 +25,40 @@ import {sortProducts} from "../../redux/Shopping/shopping-actions"
       dispatch(SelectedGrocery(e))
     }
 
+  const [change,setChange] = useState(false)
+
+  const handleSort =(sort, value)=>{
+      if(sort === 'low' && value==='price'){
+          grocery.sort((a,b)=> a.price-b.price)
+          setChange(!change)
+        };
+  
+      if(sort === 'high' && value==='price'){
+          grocery.sort((a,b)=> b.price-a.price)
+          setChange(!change)
+        };
+
+      if(sort === 'asc' && value==='title'){
+          grocery.sort((a,b)=> a.title > b.title ? 1 : -1)
+          setChange(!change)
+        };
+  
+      if(sort === 'des' && value==='title'){
+          grocery.sort((a,b)=> b.title > a.title ? 1 : -1)
+          setChange(!change)
+        };
+  }
+
   return (
   <>
   <Navbar />
+  <div id="sort">
+      <button onClick={()=>{handleSort('low','price')}}>Low to High Price</button>
+      <button  onClick={()=>{handleSort('high','price')}} >High to Low Price</button>
+      <button onClick={()=>{handleSort('asc', 'title')}}>asc to des Title</button>
+      <button  onClick={()=>{handleSort('des', 'title')}} >des to asc Title</button>
+     </div>
     <div id="grocery">
-      {/* <select name="" id="" value={this.props.sort} onChange={(e)=> this.props.sortProducts(this.props.filteredProducts, e.target.value)}>
-        <option value="">Select</option>
-        <option value="lowest">Lowest to Highest</option>
-        <option value="highest">Highest to Lowest</option>
-      </select> */}
       {
         grocery.map((e)=>{
           return(
@@ -73,10 +94,4 @@ import {sortProducts} from "../../redux/Shopping/shopping-actions"
   );
 };
 
-// const mapStateToProps = state => ({
-//   grocery: state.grocery.item,
-//   sort: state.grocery.sort
-// })
-
-// export default connect(mapStateToProps, {sortProducts})(Grocery)
 export default Grocery;

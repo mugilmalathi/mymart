@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from "react";
 import "./Checkout.css"
 import { Link } from "react-router-dom";
-import { SetAddress, SetTotal } from "../../redux/Shopping/shopping-actions";
+import { SetAddress } from "../../redux/Action/actions";
 import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
-import { useParams } from "react-router-dom/cjs/react-router-dom.min";
 import Navbar from "../Navbar/Navbar";
 import Footer from "../Footer/Footer";
 
@@ -14,7 +13,7 @@ export const Checkout = ()=>{
   const amount = useSelector((state)=> state.total.total)
   const cart = useSelector((state)=> state.shop.cart)
   const address = useSelector((state)=> state.address.address)
-  const addressId = useParams()
+//   const addressId = useParams()
   console.log(address)
 
   const dispatch = useDispatch();

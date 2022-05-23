@@ -8,6 +8,11 @@ body{
   background-color: #2d3e52;
   display: flex;
 }
+#display{
+  padding-left: 60px;
+  padding-top: 25px;
+  color: rgb(210, 200, 200);
+}
 #navbar-logo{
   width: 150px;
   height: 60px;
@@ -28,7 +33,7 @@ a{
   display: flex;
 }
 #account{
-  margin-left: 800px;
+  margin-left: 700px;
   width: 120px;
   height: 40px;
   margin-top: 15px;

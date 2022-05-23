@@ -1,11 +1,8 @@
 import React, { useEffect } from "react";
 import "./Home.css"
-import { Link } from "react-router-dom";
-// Redux
-import { connect, useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import axios from "axios";
-import { SetFashion, SetGrocery, SetMobile, SetUsers } from "../../redux/Shopping/shopping-actions";
-import Grocery from "../Products/Grocery";
+import { SetFashion, SetGrocery, SetMobile } from "../../redux/Action/actions";
 import { CarouselDiv } from "../Carousel/carousel";
 import { Category } from "../Category/Category";
 import { Card1, Travelvideo } from "../Category/Cards";
@@ -14,10 +11,11 @@ import Footer from "../Footer/Footer";
 
 const Home = () => {
 
-  const grocery = useSelector((state)=> state.groceries.grocery);
-  const fashion = useSelector((state)=> state.fashion.fashion);
-  const mobile = useSelector((state)=> state.mobiles.mobile);
-  const users = useSelector((state)=> state.users.users);
+  // const grocery = useSelector((state)=> state.groceries.grocery);
+  // const fashion = useSelector((state)=> state.fashion.fashion);
+  // const mobile = useSelector((state)=> state.mobiles.mobile);
+//   const users = useSelector((state)=> state.users.users);
+  
 
   const dispatch = useDispatch();
 
@@ -75,15 +73,5 @@ const Home = () => {
         </>
   );
 };
-
-
-
-// const mapStateToProps = (state) => {
-//   return {
-//     grocery: state.shop.grocery,
-//   };
-// };
-
-// export default connect(mapStateToProps)(Home);
 
 export default Home;

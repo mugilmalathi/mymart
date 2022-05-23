@@ -1,4 +1,4 @@
-import * as actionTypes from "./shopping-types";
+import * as actionTypes from "../Action/actionTypes";
 
 const INITIAL_STATE = {
   grocery: [],
@@ -10,7 +10,8 @@ const INITIAL_STATE = {
   address: [],
   total: 0,
   cartcount: 0,
-  filteredItems: []
+  // filteredItems: [],
+  displayuser: [],
 };
 
 
@@ -131,6 +132,18 @@ export const usersReducer = (state = INITIAL_STATE, { type, payload})=>{
   }
 }
 
+export const displayReducer = (state = INITIAL_STATE, { type, payload})=>{
+
+  switch(type){
+
+      case actionTypes.DISPLAY_USERS:
+          return { ...state, displayuser: payload};
+
+      default:
+          return state;
+  }
+}
+
 export const selecteduserReducer = (state = {}, { type, payload})=>{
 
   switch(type){
@@ -160,6 +173,34 @@ export const shopReducer = (state = INITIAL_STATE, { type, payload})=>{
         })
         return {...state, cart:updateCart}
 
+        case actionTypes.SUB_QTY:
+          const subqty =state.cart.filter((ele) => {
+            if (ele.id === payload) {
+              ele.qty=ele.qty-1;
+              return true;
+            } else {
+              return true;
+            }
+          });
+           return {
+            ...state,
+            cart:subqty,
+          };
+
+          case actionTypes.ADD_QTY:
+          const addqty =state.cart.filter((ele) => {
+            if (ele.id === payload) {
+              ele.qty=ele.qty+1;
+              return true;
+            } else {
+              return true;
+            }
+          });
+           return {
+            ...state,
+            cart:addqty,
+          };
+
         default:
           return state;
   }
@@ -174,6 +215,9 @@ export const totalReducer = (state = INITIAL_STATE, { type, payload})=>{
 
       case actionTypes.SUB_TOTAL:
           return { ...state, total: state.total-payload};
+
+      case actionTypes.ADD_TOTAL:
+        return { ...state, total: state.total+payload};
 
       default:
           return state;
@@ -194,19 +238,3 @@ export const cartCountReducer = (state = INITIAL_STATE, { type, payload})=>{
           return state;
   }
 }
-
-export const filteredprice = (state = INITIAL_STATE, action)=>{
-
-  switch(action.type){
-    case actionTypes.ORDER_PRODUCTS_BY_PRICE:
-      return {
-        ...state, filteredItems: action.payload.item,
-        sort: action.payload.sort
-      }
-      
-    default:
-      return state;
-  }
-}
-
-export default shopReducer;

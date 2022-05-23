@@ -3,18 +3,15 @@ import "./login.css"
 import signin from "../Images/login.png"
 import { Link } from "react-router-dom";
 import {useHistory} from "react-router-dom"
-import { emailValidator, passwordValidator } from "./regexValidator";
+import { emailValidator, passwordValidator } from "./validate";
 import { useDispatch, useSelector } from "react-redux";
-import Home from "../Home/Home";
-import { SetUsers } from "../../redux/Shopping/shopping-actions";
+import { DisplayUser, SetUsers } from "../../redux/Action/actions";
 import axios from "axios";
 
 export const Signin = ()=>{
 
   const history = useHistory()
-
   const dispatch = useDispatch()
-
   const users = useSelector((state)=> state.users.users)
 
   const fetchUsers = async ()=>{
@@ -53,12 +50,18 @@ useEffect(()=>{
 			return seterrorMessage(
 				'Password should have minimum 8 character with the combination of uppercase, lowercase, numbers and specialcharaters'
 			);
-		// setsuccessMessage('Successfully Validated');
+
+
     users.map((e)=>{
-      
-      if(input.email !== e.email || input.password !== e.password) return seterrorMessage('Invalid email or password');
-        history.push('/')
-        localStorage.setItem('auth', true)
+
+        if(input.email !== e.email || input.password !== e.password){
+          return seterrorMessage('Invalid email or password');
+        }
+        else{
+          dispatch(DisplayUser(e));
+          history.push('/');
+          localStorage.setItem('auth', true)
+        }
     })
     
 	};
@@ -102,9 +105,7 @@ useEffect(()=>{
                   onChange={handleChange}
                   />
               <br />
-              {/* <Link to="/"> */}
-                <button onClick={formSubmitter} id="signin-but">Sign In</button>
-              {/* </Link> */}
+              <button onClick={formSubmitter} id="signin-but">Sign In</button>
               <br />
               <Link to="/login">
                 <h4 className="create">Create a new Account. SignUp</h4>

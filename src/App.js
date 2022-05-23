@@ -6,7 +6,6 @@ import {
   Redirect,
 } from "react-router-dom";
 import "./App.css";
-import { connect } from "react-redux";
 import Grocery from "./components/Products/Grocery";
 import Home from "./components/Home/Home";
 import { Signin } from "./components/Login/signin";
@@ -19,7 +18,6 @@ import Navbar from "./components/Navbar/Navbar";
 import { GroceryDetail } from "./components/SingleProduct/GroceryDetail";
 import Mobile from "./components/Products/Mobile";
 import { MobileDetail } from "./components/SingleProduct/MobileDetail";
-import Footer from "./components/Footer/Footer";
 import Travel from "./components/Products/Travel";
 import Fashion from "./components/Products/Fashion";
 import { FashionDetail } from "./components/SingleProduct/FashionDetail";

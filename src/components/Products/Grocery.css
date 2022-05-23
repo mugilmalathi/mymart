@@ -77,3 +77,29 @@
   background-color: white;
   color: #2d3e52;
 }
+#sort{
+  width: 80%;
+  height: 40px;
+  display: flex;
+  gap: 40px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+#sort>button{
+  width: 120px;
+  height: 40px;
+  color: #2d3e52;
+  background-color: #fff;
+  border-radius: 5px;
+  border: 1px solid #2d3e52;
+  margin-left: 10px;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+#sort>button:nth-child(1){
+  margin-left: 160px;
+}
+#sort>button:hover{
+  background-color: #2d3e52;
+  color: #fff;
+}

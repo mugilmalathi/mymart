@@ -3,18 +3,15 @@ import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
-import { SetAddress } from "../../redux/Shopping/shopping-actions";
+import { SetAddress } from "../../redux/Action/actions";
 import Navbar from "../Navbar/Navbar";
 import Footer from "../Footer/Footer";
 
 export const Payment = ()=>{
 
     const amount = useSelector((state)=> state.total.total)
-
     const address = useSelector((state)=> state.address.address)
-  console.log(address)
-
-  const dispatch = useDispatch();
+    const dispatch = useDispatch();
 
     const fetchAddress = async ()=>{
         const res = await axios

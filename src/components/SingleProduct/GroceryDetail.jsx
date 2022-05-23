@@ -1,8 +1,8 @@
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { connect, useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router";
-import { addCount, addToCart, SelectedGrocery } from "../../redux/Shopping/shopping-actions";
+import { addCount, addToCart, SelectedGrocery } from "../../redux/Action/actions";
 import Footer from "../Footer/Footer";
 import Navbar from "../Navbar/Navbar";
 import "./Product.css"
@@ -10,13 +10,9 @@ import "./Product.css"
 export const GroceryDetail = ()=>{
 
     const grocery = useSelector((state)=> state.groceryitem)
-
     const {groceryId} = useParams();
-
     const dispatch = useDispatch();
-
     const { id, image, title, price } = grocery;
-
 
     const fetchGroceryDetails = async()=>{
         const res = await axios

@@ -1,4 +1,4 @@
-import * as actionTypes from "./shopping-types";
+import * as actionTypes from "./actionTypes";
 
 export const SetGrocery = (grocery)=>{
 
@@ -81,6 +81,14 @@ export const SelectedUser = (us)=>{
   }
 }
 
+export const DisplayUser = (us)=>{
+
+  return{
+      type: actionTypes.DISPLAY_USERS,
+      payload: us
+  }
+}
+
 
 export const addToCart = (product) => {
   return {
@@ -93,6 +101,19 @@ export const removeCart = (id) => {
   return {
     type: actionTypes.REMOVE_CART,
     payload:id
+  };
+};
+
+export const addQty = (qty) => {
+  return {
+    type: actionTypes.ADD_QTY,
+    payload:qty
+  };
+};
+export const subQty = (qty) => {
+  return {
+    type: actionTypes.SUB_QTY,
+    payload:qty
   };
 };
 
@@ -109,6 +130,13 @@ export const SubTotal = (total)=>{
 
   return{
       type: actionTypes.SUB_TOTAL,
+      payload: total
+  }
+}
+export const AddTotal = (total)=>{
+
+  return{
+      type: actionTypes.ADD_TOTAL,
       payload: total
   }
 }
@@ -131,23 +159,4 @@ export const subCount = (count)=>({
   type: actionTypes.SUB_COUNT,
   payload: count,
 })
-
-
-export const sortProducts = (item, sort) => (dispatch)=>{
-
-  const products = item.slice();
-  if(sort !== ''){
-    products.sort((a, b) => (sort === 'lowest') ?
-    (a.price > b.price ? 1 : -1)
-    : (a.price < b.price ? 1 : -1))
-  }else{
-    products.sort((a, b) => (a.id > b.id ? 1 : -1));
-  }
-  return dispatch({
-    type: actionTypes.ORDER_PRODUCTS_BY_PRICE,
-    payload:{
-      sort: sort,
-      item: products
-    }
-  })
-}
+ 

@@ -1,8 +1,8 @@
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { connect, useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router";
-import { addCount, addToCart, SelectedGrocery, SelectedMobile } from "../../redux/Shopping/shopping-actions";
+import { addCount, addToCart, SelectedMobile } from "../../redux/Action/actions";
 import Footer from "../Footer/Footer";
 import Navbar from "../Navbar/Navbar";
 import "./Product.css"
@@ -10,13 +10,9 @@ import "./Product.css"
 export const MobileDetail = ()=>{
 
     const mobile = useSelector((state)=> state.mobileitem)
-
     const {mobileId} = useParams();
-
     const dispatch = useDispatch();
-
     const { id, image, title, price, description } = mobile;
-
 
     const fetchMobileDetails = async()=>{
         const res = await axios
@@ -65,5 +61,3 @@ export const MobileDetail = ()=>{
         </>
     )
 }
-
-//testing..!!

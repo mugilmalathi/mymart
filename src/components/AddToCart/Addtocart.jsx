@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { removeCart, SetTotal, subCount, SubTotal } from "../../redux/Shopping/shopping-actions";
+import { addQty, AddTotal, removeCart, subCount, subQty, SubTotal } from "../../redux/Action/actions";
 import Footer from "../Footer/Footer";
 import Navbar from "../Navbar/Navbar";
 import "./Cart.css"
@@ -38,6 +38,23 @@ export const Addtocart = ()=>{
         dispatch(SubTotal(e.price))
     }
 
+    const addqty = (e)=>{
+        dispatch(addQty(e.id));
+        dispatch(AddTotal(e.price))
+        // console.log(e.qty)
+    }
+    const subqty = (e)=>{
+        if(e.qty === 0){
+            dispatch(removeCart(e.id))
+            if(e.qty > 0){
+                dispatch(SubTotal(e.price)) 
+            }
+        }else{
+            dispatch(subQty(e.id));
+            dispatch(SubTotal(e.price))
+        }
+    }
+
 
     return(
         <>
@@ -49,8 +66,13 @@ export const Addtocart = ()=>{
                         return(
                             <div>
                                 <div><img src={e.image} alt="" /></div>
+                                <div id="qty">
+                                    <div><button onClick={()=>{subqty(e)}}>-</button></div>
+                                    <div><h4>{e.qty}</h4></div>
+                                    <div><button onClick={()=>{addqty(e)}}>+</button></div>
+                                </div>
                                 <div><p>{e.title}</p></div>
-                                <div><h1>₹{e.price}</h1></div>
+                                <div><h1>₹{e.price*e.qty}</h1></div>
                                 <div><button onClick={() => 
                                     remove(e.id)
                                     } onClickCapture={()=>{

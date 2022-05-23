@@ -3,8 +3,26 @@ import "./login.css"
 import signin from "../Images/login.png"
 import { Link } from "react-router-dom";
 import axios from "axios";
+import { emailValidator, passwordValidator } from "./validate";
+import {useHistory} from "react-router-dom"
 
 export const Signup = ()=>{
+
+  const [input, setInput] = React.useState({ email: '', password: '' });
+
+	const [errorMessage, seterrorMessage] = React.useState('');
+	const [successMessage, setsuccessMessage] = React.useState('');
+
+	const formSubmitter = e => {
+		e.preventDefault();
+		setsuccessMessage('');
+		if (!emailValidator(input.email)) return seterrorMessage('Please enter valid email id');
+
+		if (!passwordValidator(input.password))
+			return seterrorMessage(
+				'Password should have minimum 8 character with the combination of uppercase, lowercase, numbers and specialcharaters'
+			);
+    }
 
   const [formData, setFormData] = useState({
     id: "",
@@ -61,6 +79,10 @@ const getData = ()=>{
             </div>
             <div id="signup-right">
               <h1>SIGN UP</h1>
+              {errorMessage.length > 0 && <div style={{ marginBottom: '10px', color: 'red' }}>{errorMessage}</div>}
+							{successMessage.length > 0 && (
+								<div style={{ marginBottom: '10px', color: 'green' }}>{successMessage}</div>
+							)}
               <label>First Name</label>
               <br />
               <input 

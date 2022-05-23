@@ -1,8 +1,8 @@
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { connect, useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router";
-import { addCount, addToCart, SelectedFashion } from "../../redux/Shopping/shopping-actions";
+import { addCount, addToCart, SelectedFashion } from "../../redux/Action/actions";
 import Footer from "../Footer/Footer";
 import Navbar from "../Navbar/Navbar";
 import "./Product.css"
@@ -10,11 +10,8 @@ import "./Product.css"
 export const FashionDetail = ()=>{
 
     const fashion = useSelector((state)=> state.fashionitem)
-
     const {fashionId} = useParams();
-
     const dispatch = useDispatch();
-
     const { id, image, title, price, description } = fashion;
 
 

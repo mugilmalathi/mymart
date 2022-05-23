@@ -1,13 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Fashion.css"
 import { Link } from "react-router-dom";
-// Redux
 import { useDispatch, useSelector } from "react-redux";
-import {
-  addCount,
-  addToCart, SelectedFashion, SetTotal,
-} from "../../redux/Shopping/shopping-actions";
-import { useParams } from "react-router";
+import { addCount, addToCart, SelectedFashion, SetTotal } from "../../redux/Action/actions";
 import Navbar from "../Navbar/Navbar";
 import Footer from "../Footer/Footer";
 
@@ -16,8 +11,7 @@ import Footer from "../Footer/Footer";
     const fashion = useSelector((state)=> state.fashion.fashion);
     console.log(fashion)
     const dispatch = useDispatch();
-    const count = useSelector((state)=> state.cartcount.cartcount);
-    // const {groceryId} = useParams();
+    // const count = useSelector((state)=> state.cartcount.cartcount);
 
     const add =(e)=>{
       dispatch(addToCart(e))
@@ -29,9 +23,39 @@ import Footer from "../Footer/Footer";
       dispatch(SelectedFashion(e))
     }
 
+    const [change,setChange] = useState(false)
+
+  const handleSort =(sort, value)=>{
+      if(sort === 'low' && value==='price'){
+          fashion.sort((a,b)=> a.price-b.price)
+          setChange(!change)
+        };
+  
+      if(sort === 'high' && value==='price'){
+          fashion.sort((a,b)=> b.price-a.price)
+          setChange(!change)
+        };
+
+      if(sort === 'asc' && value==='title'){
+          fashion.sort((a,b)=> a.title > b.title ? 1 : -1)
+          setChange(!change)
+        };
+  
+      if(sort === 'des' && value==='title'){
+          fashion.sort((a,b)=> b.title > a.title ? 1 : -1)
+          setChange(!change)
+        };
+  }
+
   return (
   <>
   <Navbar />
+     <div id="sort">
+      <button onClick={()=>{handleSort('low','price')}}>Low to High Price</button>
+      <button  onClick={()=>{handleSort('high','price')}} >High to Low Price</button>
+      <button onClick={()=>{handleSort('asc', 'title')}}>asc to des Title</button>
+      <button  onClick={()=>{handleSort('des', 'title')}} >des to asc Title</button>
+     </div>
     <div id="grocery">
       {
         fashion.map((e)=>{
