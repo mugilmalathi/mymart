@@ -1,6 +1,5 @@
 #grocery{
-  width: 80%;
-  margin: auto;
+  width: 90%;
   margin-top: 50px;
   margin-bottom: 50px;
   display: grid;
@@ -50,56 +49,71 @@
   height: 40px;
   margin-top: 15px;
   color: #fff;
-  background-color: #2d3e52;
+  background-color: #0b1320;
   border-radius: 5px;
-  border: 1px solid #2d3e52;
+  border: 1px solid #0b1320;
   margin-left: 15px;
   margin-bottom: 10px;
   cursor: pointer;
 }
 #grid-but-view:hover{
   background-color: white;
-  color: #2d3e52;
+  color: #0b1320;
 }
 #grid-but-cart{
   width: 120px;
   height: 40px;
   margin-top: 15px;
   color: #fff;
-  background-color: #2d3e52;
+  background-color: #0b1320;
   border-radius: 5px;
-  border: 1px solid #2d3e52;
+  border: 1px solid #0b1320;
   margin-left: 10px;
   margin-bottom: 10px;
   cursor: pointer;
 }
 #grid-but-cart:hover{
   background-color: white;
-  color: #2d3e52;
+  color: #0b1320;
 }
 #sort{
-  width: 80%;
-  height: 40px;
-  display: flex;
-  gap: 40px;
+  width: 10%;
   margin-top: 50px;
-  margin-bottom: 50px;
+  margin-bottom: 100px;
+  margin-left: 20px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  background-color: #0b1320;
+  border-radius: 5px;
 }
 #sort>button{
   width: 120px;
   height: 40px;
-  color: #2d3e52;
-  background-color: #fff;
+  color: #fff;
+  background-color: #0b1320;
   border-radius: 5px;
-  border: 1px solid #2d3e52;
-  margin-left: 10px;
+  border: 1px solid gray;
+  margin-left: 15px;
+  margin-top: 25px;
   margin-bottom: 10px;
   cursor: pointer;
 }
 #sort>button:nth-child(1){
-  margin-left: 160px;
 }
 #sort>button:hover{
-  background-color: #2d3e52;
-  color: #fff;
+  background-color: #fff;
+  color: #0b1320;
+}
+#search_item{
+  width: 400px;
+  height: 40px;
+  margin-left: 650px;
+  border-radius: 5px;
+  border: 1px solid #0b1320;
+  padding-left: 20px;
+  color: #0b1320;
+  margin-top: 50px;
+}
+#gro-main{
+  width: 100%;
+  display: flex;
 }

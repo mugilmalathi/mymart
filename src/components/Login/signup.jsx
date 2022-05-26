@@ -4,25 +4,14 @@ import signin from "../Images/login.png"
 import { Link } from "react-router-dom";
 import axios from "axios";
 import { emailValidator, passwordValidator } from "./validate";
-import {useHistory} from "react-router-dom"
 
 export const Signup = ()=>{
 
-  const [input, setInput] = React.useState({ email: '', password: '' });
 
 	const [errorMessage, seterrorMessage] = React.useState('');
 	const [successMessage, setsuccessMessage] = React.useState('');
 
-	const formSubmitter = e => {
-		e.preventDefault();
-		setsuccessMessage('');
-		if (!emailValidator(input.email)) return seterrorMessage('Please enter valid email id');
-
-		if (!passwordValidator(input.password))
-			return seterrorMessage(
-				'Password should have minimum 8 character with the combination of uppercase, lowercase, numbers and specialcharaters'
-			);
-    }
+	
 
   const [formData, setFormData] = useState({
     id: "",
@@ -32,6 +21,17 @@ export const Signup = ()=>{
     mobile: "",
     password: ""
 });
+
+const formSubmitter = e => {
+  e.preventDefault();
+  setsuccessMessage('');
+  if (!emailValidator(formData.email)) return seterrorMessage('Please enter valid email id');
+
+  if (!passwordValidator(formData.password))
+    return seterrorMessage(
+      'Password should have minimum 8 character with the combination of uppercase, lowercase, numbers and specialcharaters'
+    );
+  }
 
 const [data, setData] = useState({});
 

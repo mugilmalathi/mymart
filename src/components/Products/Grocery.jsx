@@ -1,19 +1,35 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Grocery.css"
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import {
   addCount,
-  addToCart, SelectedGrocery, SetTotal,
+  addToCart, SelectedGrocery, SetGrocery, SetTotal,
 } from "../../redux/Action/actions";
 import Navbar from "../Navbar/Navbar";
 import Footer from "../Footer/Footer";
+import axios from "axios";
 
   const Grocery = () => {
 
     const grocery = useSelector((state)=> state.groceries.grocery);
     const dispatch = useDispatch();
     // const count = useSelector((state)=> state.cartcount.cartcount);
+
+    const [page, setPage] = useState(1);
+
+    const fetchGrocery = async ()=>{
+      const res = await axios
+      .get(`https://boiling-brushlands-36073.herokuapp.com/grocery/?_limit=4&_page=${page}`)
+      .catch((err)=>{
+          console.log("Err", err);
+      })
+      dispatch(SetGrocery(res.data));
+  };
+
+  useEffect(()=>{
+    fetchGrocery();
+}, [])
 
     const add =(e)=>{
       dispatch(addToCart(e))
@@ -49,18 +65,32 @@ import Footer from "../Footer/Footer";
         };
   }
 
+  const [search, setSearch] = useState("");
+  // console.log(grocery.filter(e=>e.title.toLowerCase().includes("x")))
+
+
   return (
   <>
   <Navbar />
-  <div id="sort">
-      <button onClick={()=>{handleSort('low','price')}}>Low to High Price</button>
-      <button  onClick={()=>{handleSort('high','price')}} >High to Low Price</button>
-      <button onClick={()=>{handleSort('asc', 'title')}}>asc to des Title</button>
-      <button  onClick={()=>{handleSort('des', 'title')}} >des to asc Title</button>
-     </div>
+  <input 
+    id="search_item" 
+    type="text" 
+    placeholder="...Search Grocery Products"
+    onChange={(e)=>{
+      setSearch(e.target.value)
+    }}/>
+    
+    <div id="gro-main">
+        <div id="sort">
+          <button onClick={()=>{handleSort('low','price')}}>Low to High Price</button>
+          <button  onClick={()=>{handleSort('high','price')}} >High to Low Price</button>
+          <button onClick={()=>{handleSort('asc', 'title')}}>Asc to Des Title</button>
+          <button  onClick={()=>{handleSort('des', 'title')}} >Des to Asc Title</button>
+        </div>
     <div id="grocery">
       {
-        grocery.map((e)=>{
+        grocery.filter((gro)=>gro.title.toLowerCase().includes(search)
+        ).map((e)=>{
           return(
             <div id="grid-div" key={e.id}>
                 <div id="grid-top">
@@ -89,6 +119,18 @@ import Footer from "../Footer/Footer";
         })
        }
       </div>
+    </div>
+
+      {/* <button onClick={()=>{
+          setPage(page - 1);
+          // SetGrocery(page - 1)
+          console.log(grocery)
+      }}>Prev</button>
+      <button onClick={()=>{
+          setPage(page + 1);
+          // SetGrocery(page + 1)
+          console.log(grocery)
+      }}>Next</button> */}
     <Footer />
     </>
   );

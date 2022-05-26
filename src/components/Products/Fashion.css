@@ -55,30 +55,30 @@
     height: 40px;
     margin-top: 15px;
     color: #fff;
-    background-color: #2d3e52;
+    background-color: #0b1320;
     border-radius: 5px;
-    border: 1px solid #2d3e52;
+    border: 1px solid #0b1320;
     margin-left: 15px;
     margin-bottom: 10px;
     cursor: pointer;
   }
   #grid-but-view:hover{
     background-color: white;
-    color: #2d3e52;
+    color: #0b1320;
   }
   #grid-but-cart{
     width: 120px;
     height: 40px;
     margin-top: 15px;
     color: #fff;
-    background-color: #2d3e52;
+    background-color: #0b1320;
     border-radius: 5px;
-    border: 1px solid #2d3e52;
+    border: 1px solid #0b1320;
     margin-left: 10px;
     margin-bottom: 10px;
     cursor: pointer;
   }
   #grid-but-cart:hover{
     background-color: white;
-    color: #2d3e52;
+    color: #0b1320;
   }

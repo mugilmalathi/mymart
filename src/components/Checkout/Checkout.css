@@ -19,7 +19,7 @@
 }
 #checkout-login>h4{
     font-family: 'Fira Sans Extra Condensed', sans-serif;
-    color: #2d3e52;
+    color: #0b1320;
     padding-left: 50px;
     padding-top: 50px;
 }
@@ -29,9 +29,9 @@
     height: 40px;
     margin-top: 35px;
     color: white;
-    background-color: #2d3e52;
+    background-color: #0b1320;
     border-radius: 5px;
-    border: 1px solid #2d3e52;
+    border: 1px solid #0b1320;
     cursor: pointer;
 }
 #checkout-add{
@@ -41,14 +41,14 @@
     margin-top: 35px;
     margin-bottom: 30px;
     color: white;
-    background-color: #2d3e52;
+    background-color: #0b1320;
     border-radius: 5px;
-    border: 1px solid #2d3e52;
+    border: 1px solid #0b1320;
     cursor: pointer;
 }
 #checkout-login-but:hover{
     background-color: white;
-    color: #2d3e52;
+    color: #0b1320;
 }
 #checkout-address{
     width: 100%;
@@ -66,7 +66,7 @@
 }
 #checkout-address>div:nth-child(1)>h4{
     font-family: 'Fira Sans Extra Condensed', sans-serif;
-    color: #2d3e52;
+    color: #0b1320;
     padding-left: 50px;
     padding-top: 20px;
 }
@@ -76,10 +76,10 @@
     height: 40px;
     margin-top: 10px;
     margin-bottom: 10px;
-    border:1px solid  #2d3e52;
+    border:1px solid  #0b1320;
     padding-left: 20px;
     border-radius: 5px;
-    color: #2d3e52;
+    color: #0b1320;
 }
 #checkout-address>div:nth-child(1)>textarea{
     margin-left: 50px;
@@ -87,10 +87,10 @@
     height: 40px;
     margin-top: 10px;
     margin-bottom: 10px;
-    border:1px solid  #2d3e52;
+    border:1px solid  #0b1320;
     padding-left: 20px;
     border-radius: 5px;
-    color: #2d3e52;
+    color: #0b1320;
 }
 #addr-div-right{
     width: 80%;
@@ -100,7 +100,7 @@
     margin-right: 30px;
     margin-bottom: 30px;
     line-height: 40px;
-    color: #2d3e52;
+    color: #0b1320;
 }
 #checkout-payment{
     display: flex;
@@ -112,7 +112,7 @@
 }
 #checkout-payment>h4{
     font-family: 'Fira Sans Extra Condensed', sans-serif;
-    color: #2d3e52;
+    color: #0b1320;
     padding-left: 50px;
     padding-top: 50px;
 }
@@ -122,14 +122,14 @@
     height: 40px;
     margin-top: 35px;
     color: white;
-    background-color: #2d3e52;
+    background-color: #0b1320;
     border-radius: 5px;
-    border: 1px solid #2d3e52;
+    border: 1px solid #0b1320;
     cursor: pointer;
 }
 #checkout-payment-but:hover{
     background-color: white;
-    color: #2d3e52;
+    color: #0b1320;
 }
 #checkout-right{
     width: 25%;
@@ -165,4 +165,10 @@
 }
 #checkout-right-two>h4:nth-child(2){
     padding-left: 30px;
+}
+#success{
+    text-align: center;
+    justify-content: center;
+    margin-top: 100px;
+    margin-bottom: 100px;
 }

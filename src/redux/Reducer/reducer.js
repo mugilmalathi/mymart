@@ -4,6 +4,7 @@ const INITIAL_STATE = {
   grocery: [],
   mobile: [],
   fashion: [],
+  electronic:[],
   cart: [],
   users: [],
   category: [],
@@ -90,6 +91,30 @@ export const selectedfashionReducer = (state = {}, { type, payload})=>{
 
           // case ActionTypes.REMOVED_SELECTED_GROCERY:
           //     return {};
+
+      default:
+          return state;
+  }
+}
+
+export const electronicReducer = (state = INITIAL_STATE, { type, payload})=>{
+
+  switch(type){
+
+      case actionTypes.SET_ELECTRONIC:
+          return { ...state, electronic: payload};
+
+      default:
+          return state;
+  }
+}
+
+export const selectedelectronicReducer = (state = {}, { type, payload})=>{
+
+  switch(type){
+
+      case actionTypes.SELECTED_ELECTRONIC:
+          return { ...state, ...payload};
 
       default:
           return state;

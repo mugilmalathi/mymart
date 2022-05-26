@@ -1,7 +1,7 @@
-import "../Payment/Payment.css"
 import React from "react";
 import Navbar from "../Navbar/Navbar";
 import Footer from "../Footer/Footer";
+import "../Checkout/Checkout.css"
 
 export const Success = ()=>{
     return(

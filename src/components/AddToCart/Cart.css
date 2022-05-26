@@ -39,8 +39,8 @@
 #qty>div>button{
     width: 30px;
     height: 30px;
-    border: 1px solid #2d3e52;
-    background-color: #2d3e52;
+    border: 1px solid #0b1320;
+    background-color: #0b1320;
     color: white;
     border-radius: 5px;
     font-size: large;
@@ -56,14 +56,14 @@
 }
 #addtocart__left>div>div:nth-child(3)>p{
     padding-top: 85px;
-    color: #2d3e52;
+    color: #0b1320;
 }
 #addtocart__left>div>div:nth-child(4){
     width: 20%;
 }
 #addtocart__left>div>div:nth-child(4)>h1{
     padding-top: 80px;
-    color: #2d3e52;
+    color: #0b1320;
 }
 #addtocart__left>div>div:nth-child(5){
     width: 20%;
@@ -72,8 +72,8 @@
     margin-top: 70px;
     width: 50px;
     height: 50px;
-    border: 1px solid #2d3e52;
-    background-color: #2d3e52;
+    border: 1px solid #0b1320;
+    background-color: #0b1320;
     color: white;
     border-radius: 5px;
     font-size: large;
@@ -94,7 +94,7 @@
     padding-bottom: 20px;
 }
 #addtocart__right>h3{
-    color: #2d3e52;
+    color: #0b1320;
 }
 #addtocart__right>p{
     padding-top: 20px;
@@ -104,15 +104,15 @@
     margin-top: 20px;
     width: 200px;
     height: 35px;
-    border: 1px solid #2d3e52;
-    background-color: #2d3e52;
+    border: 1px solid #0b1320;
+    background-color: #0b1320;
     color: white;
     border-radius: 5px;
     font-size: medium;
     cursor: pointer;
 }
 #addtocart__right__but:hover{
-    border: 1px solid #2d3e52;
+    border: 1px solid #0b1320;
     background-color: #fff;
-    color: #2d3e52;
+    color: #0b1320;
 }

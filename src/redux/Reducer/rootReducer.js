@@ -6,9 +6,11 @@ import
         cartCountReducer,
         categoryReducer, 
         displayReducer, 
+        electronicReducer, 
         fashionReducer, 
         groceryReducer, 
         mobileReducer, 
+        selectedelectronicReducer, 
         selectedfashionReducer, 
         selectedgroceryReducer, 
         selectedmobileReducer, 
@@ -30,6 +32,9 @@ const rootReducer = combineReducers({
 
   fashion: fashionReducer,
   fashionitem: selectedfashionReducer,
+
+  electronic:electronicReducer,
+  electronicitem: selectedelectronicReducer,
   
   users: usersReducer,
   userdetail: selecteduserReducer,

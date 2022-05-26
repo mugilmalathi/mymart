@@ -1,27 +1,8 @@
 import { Link } from "react-router-dom";
 import "../Home/Home.css"
-import React, { useEffect } from 'react'
-import { useDispatch, useSelector } from "react-redux";
-import axios from "axios";
-import { SetCategory } from "../../redux/Action/actions";
+import React from 'react'
 
 export const Category = ()=>{
-
-    const category = useSelector((state)=> state.categories.category);
-    const dispatch = useDispatch();
-
-    const fetchCategory = async ()=>{
-        const res = await axios
-        .get("https://boiling-brushlands-36073.herokuapp.com/category")
-        .catch((err)=>{
-            console.log("Err", err);
-        })
-        dispatch(SetCategory(res.data));
-    };
-
-    useEffect(()=>{
-        fetchCategory();
-  }, [])
 
     return(
 

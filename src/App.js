@@ -2,8 +2,7 @@ import React from "react";
 import {
   BrowserRouter as Router,
   Switch,
-  Route,
-  Redirect,
+  Route
 } from "react-router-dom";
 import "./App.css";
 import Grocery from "./components/Products/Grocery";
@@ -11,7 +10,6 @@ import Home from "./components/Home/Home";
 import { Signin } from "./components/Login/signin";
 import { Signup } from "./components/Login/signup";
 import { Checkout } from "./components/Checkout/Checkout";
-import { Payment } from "./components/Payment/Payment";
 import { Success } from "./components/Success/Success";
 import { Addtocart } from "./components/AddToCart/Addtocart";
 import Navbar from "./components/Navbar/Navbar";
@@ -21,6 +19,8 @@ import { MobileDetail } from "./components/SingleProduct/MobileDetail";
 import Travel from "./components/Products/Travel";
 import Fashion from "./components/Products/Fashion";
 import { FashionDetail } from "./components/SingleProduct/FashionDetail";
+import Electronic from "./components/Products/Electronic";
+import { ElectronicDetail } from "./components/SingleProduct/ElectronicDetail";
 
 function App({ current }) {
   return (
@@ -38,13 +38,15 @@ function App({ current }) {
 
             <Route exact path="/fashion" component={Fashion} />
             <Route exact path="/fashion/:fashionId" component={FashionDetail} />
+
+            <Route exact path="/electronic" component={Electronic} />
+            <Route exact path="/electronic/:electronicId" component={ElectronicDetail} />
             
             <Route exact path="/login" component={Signup} />
             <Route exact path="/signin" component={Signin} />
             <Route exact path="/signup/:userId" component={Navbar} />
 
             <Route exact path="/checkout" component={Checkout} />
-            <Route exact path="/payment" component={Payment} />
             <Route exact path="/success" component={Success} />
             <Route exact path="/cart" component={Addtocart} />
             <Route exact path="/travel" component={Travel} />

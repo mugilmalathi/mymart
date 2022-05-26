@@ -2,30 +2,31 @@ import React, { useEffect, useState } from "react";
 import "./Mobile.css"
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { addCount, addToCart, SelectedMobile, SetMobile, SetTotal } from "../../redux/Action/actions";
+import { addCount, addToCart, SelectedMobile, SetElectronic, SetTotal } from "../../redux/Action/actions";
 import Navbar from "../Navbar/Navbar";
 import Footer from "../Footer/Footer";
 import axios from "axios";
 
-  const Mobile = () => {
+  const Electronic = () => {
 
-    const mobile = useSelector((state)=> state.mobiles.mobile);
+    const electronic = useSelector((state)=> state.electronic.electronic);
     const count = useSelector((state)=> state.cartcount.cartcount);
 
     const dispatch = useDispatch();
+    // const {groceryId} = useParams();
 
-    const fetchMobile = async ()=>{
+    const fetchElectronic = async ()=>{
       const res = await axios
-      .get("https://boiling-brushlands-36073.herokuapp.com/mobile")
+      .get("https://boiling-brushlands-36073.herokuapp.com/electronic")
       .catch((err)=>{
           console.log("Err", err);
       })
-      dispatch(SetMobile(res.data));
-  };
+      dispatch(SetElectronic(res.data));
+    };
 
-  useEffect(()=>{
-    fetchMobile()
-  }, [])
+    useEffect(()=>{
+      fetchElectronic()
+    }, [])
 
     const add =(e)=>{
       dispatch(addToCart(e))
@@ -42,22 +43,22 @@ import axios from "axios";
 
   const handleSort =(sort, value)=>{
       if(sort === 'low' && value==='price'){
-          mobile.sort((a,b)=> a.price-b.price)
+        electronic.sort((a,b)=> a.price-b.price)
           setChange(!change)
         };
   
       if(sort === 'high' && value==='price'){
-          mobile.sort((a,b)=> b.price-a.price)
+        electronic.sort((a,b)=> b.price-a.price)
           setChange(!change)
         };
 
       if(sort === 'asc' && value==='title'){
-          mobile.sort((a,b)=> a.title > b.title ? 1 : -1)
+        electronic.sort((a,b)=> a.title > b.title ? 1 : -1)
           setChange(!change)
         };
   
       if(sort === 'des' && value==='title'){
-          mobile.sort((a,b)=> b.title > a.title ? 1 : -1)
+        electronic.sort((a,b)=> b.title > a.title ? 1 : -1)
           setChange(!change)
         };
   }
@@ -70,21 +71,21 @@ import axios from "axios";
     <input 
       id="search_item" 
       type="text" 
-      placeholder="...Search Mobile Phones"
+      placeholder="...Search Electronic Items"
       onChange={(e)=>{
         setSearch(e.target.value)
       }}/>
-   <div id="gro-main">
-    <div id="sort">
+
+    <div id="gro-main">
+      <div id="sort">
         <button onClick={()=>{handleSort('low','price')}}>Low to High Price</button>
         <button  onClick={()=>{handleSort('high','price')}} >High to Low Price</button>
-        
         <button onClick={()=>{handleSort('asc', 'title')}}>Asc to Des Title</button>
         <button  onClick={()=>{handleSort('des', 'title')}} >Des to Asc Title</button>
       </div>
         <div id="grocery">
           {
-            mobile.filter((gro)=>gro.title.toLowerCase().includes(search)
+            electronic.filter((gro)=>gro.title.toLowerCase().includes(search)
             ).map((e)=>{
               return(
                 <div id="grid-div" key={e.id}>
@@ -114,10 +115,10 @@ import axios from "axios";
             })
           }
         </div>
-   </div>
+    </div>
     <Footer />
     </>
   );
 };
 
-export default Mobile;
+export default Electronic;

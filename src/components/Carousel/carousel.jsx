@@ -12,13 +12,13 @@ export const CarouselDiv = ()=>{
 
         <div id="carousel">
             <Carousel>
+                
+                <div className='carousel2'>
+                    <img src={carousel1} alt="" />
+                </div>
 
                 <div className='carousel1'>
                    <img src={carousel3} alt="" />
-                </div>
-
-                <div className='carousel2'>
-                    <img src={carousel1} alt="" />
                 </div>
 
                 <div className='carousel3'>

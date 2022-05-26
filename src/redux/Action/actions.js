@@ -48,6 +48,22 @@ export const SelectedFashion = (fas)=>{
   }
 }
 
+export const SetElectronic = (electronic)=>{
+
+  return{
+      type: actionTypes.SET_ELECTRONIC,
+      payload: electronic
+  }
+}
+
+export const SelectedElectronic = (ele)=>{
+
+  return{
+      type: actionTypes.SELECTED_ELECTRONIC,
+      payload: ele
+  }
+}
+
 
 
 
